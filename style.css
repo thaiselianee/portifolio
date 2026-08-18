@@ -1,0 +1,1129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*evita aumento indesejado*/
+    scroll-behavior: smooth;/*suaviza a rolagem*/
+}
+
+#Inicio{
+    background-color: black;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+  overflow: hidden;
+}
+
+.hero{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.Portifolio{
+    color: #78428d;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scaleY(1.6) scaleX(0.9);
+    font-family: "Anton", sans-serif;
+      font-size: clamp(100px, 16vw, 200px);
+
+    font-weight: 700;
+    white-space: nowrap;
+    margin: 0;
+
+}
+
+
+.nome{
+    position: absolute;
+    left: 7%;
+    bottom: 8%;
+    color: #e1a7f7;
+    font-size: 20px;
+    font-weight: 400;
+    z-index: 5;
+}
+
+.descricao{
+    position: absolute;
+    right: 6%;
+    bottom: 8%;
+    color: #e1a7f7;
+    font-size: 20px;
+    z-index: 5;
+}
+
+#header-fixo{
+    width: 100%;
+    height: 80px;
+    background-color: rgba(111, 52, 137, 0.64);
+    backdrop-filter: blur(5px); 
+    display: flex;
+    align-items: center;
+    padding: 0 280px;
+    box-sizing: border-box;
+   /*esse faz ficar no topo fixo*/
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.header{
+
+    margin: 0;
+    font-size: 30px;
+    color: #fff;
+    white-space: nowrap;
+}
+
+
+.header nav{
+    margin-left: auto;
+}
+.menu{
+    list-style: none;
+    margin: 0;
+    display: flex;
+    padding: 0;
+    padding-left: 300px;
+
+    /*serve pra separar entre eles*/
+    gap: 20px;
+
+}
+
+.menu a{
+    color: rgb(241, 241, 241);
+
+    /*tira a linha de baixo das home*/
+    text-decoration: none;
+    font-size: 20px;
+
+
+}
+.menu a:hover{
+    text-decoration: underline;
+}
+
+
+#Sobre-Min{
+
+    /**/
+    min-height: 100vh; /*aqui colocamos isso porque queremos que a capa ocupe exatamente a tela. */
+    background-color: rgb(0, 0, 0);
+
+    color: rgb(243, 242, 242);
+    padding: 60px 18%;/*o padding serve como uma margen inferior*/
+    box-sizing: border-box;
+
+}
+
+.Sobre-Conteiner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.Sobre-texto{
+    width: 65%;
+    color: #fff;
+}
+
+.Sobre-texto h2{
+    font-size: 50px;
+    margin-bottom: 25px;
+}
+
+.Sobre-texto p{
+    font-size: 20px;
+    line-height: 1.5;/*distancia entre linhas*/
+    margin-bottom: 20px;
+}
+
+/*agora foto redonda*/
+.Sobre-img{
+    width: 380px;
+    height: 380px;
+    flex-shrink: 0;
+}
+
+.Sobre-img img{
+    width: 110%;
+    height: 110%;
+    border-radius: 50%;/*ele faz ficar redondo*/
+    object-fit: cover;
+    border: #e8f0a8;
+        border: 4px solid white;
+
+
+}
+
+#Estudos{
+    min-height: 100vh; /*aqui colocamos isso porque queremos que a capa ocupe exatamente a tela. */
+    background: linear-gradient(#754689 , #ab75c1, #e1a9f7);
+    box-sizing: border-box;
+    padding: 100px 10%;
+    color: #fff;
+}   
+.estudos-conteiner{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.estudos-colunas{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+.estudos-conteiner h2{
+    font-size: 50px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.estudos{
+    margin-bottom: 25px;
+
+}
+
+.estudos h3{
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.barra{
+    width: 100%;
+    height: 12px;
+    background-color: #070707;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progresso{
+    width: 0;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    transition: width 2s ease;
+}
+
+/*AQUI FICA BARRAS*/
+.mostrar .html-css{
+    width: 80%;
+}
+
+.mostrar .javaScript{
+    width: 50%;
+}
+
+.mostrar .csharp{
+    width: 60%;
+}
+
+.mostrar .C{
+    width: 40%;
+}
+
+.mostrar .python{
+    width: 50%;
+}
+
+.mostrar .excel{
+    width: 70%;
+}
+
+.mostrar .githubgit{
+    width: 70%;
+}
+
+.mostrar .sql{
+    width: 60%;
+}
+
+.mostrar .linux{
+    width: 50%;
+}
+
+.mostrar .conteudo{
+    width: 60%;
+}
+
+.mostrar .relatorios{
+    width: 70%;
+}
+
+.mostrar .redessociais{
+    width: 60%;
+}
+
+
+.btn{
+    padding: 20px;
+    background:#2e1c34;
+    border-radius: 6px;
+        text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    display: inline-block;
+    margin-top: 25px;
+ 
+}
+
+.btn:hover{
+    background: #9f8ea5;
+}
+
+
+#Idioma{
+    min-height: 100vh; /*aqui colocamos isso porque queremos que a capa ocupe exatamente a tela. */
+    background: linear-gradient(#d4a0e8 , #78428d, #1c121f);
+    color: #fff;
+    padding: 100px 10%;
+    box-sizing: border-box;
+
+}
+
+#Idioma h2{
+
+    text-align: center;
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 50px;
+
+}
+
+.Idioma-conteiner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+}
+
+.Idioma-item{
+    background: #2e1c34;
+    width: 240px;
+    border: 1px solid #1a131b;
+    border-radius: 15px;
+    padding: 40px;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.Idioma-item:hover{
+    background: transparent;
+        border: 3px solid #555;
+        transform: translateY(-8px);
+        box-shadow: 0 10px 30px #1c121f;
+
+}
+
+.Idioma-nam h3{
+    font-size: 25px;
+    margin: 0 0 15px 0;
+}
+
+
+#Contato {
+    min-height: 100vh;
+
+    background: #160d19;
+
+    color: white;
+
+    padding: 120px 10%;
+
+    box-sizing: border-box;
+}
+
+.contato-container {
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+
+
+.contato-titulo {
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+
+
+.contato-titulo h2 {
+    font-size: 50px;
+
+    margin: 0 0 15px;
+}
+
+
+.contato-titulo p {
+    font-size: 18px;
+
+    color: #ddd;
+
+    margin: 0;
+}
+
+.contato-conteudo {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+
+    align-items: stretch;
+}
+
+/*card formulario*/
+
+.contato-formulario {
+    background: #241528;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    border: 1px solid #754689;
+
+    box-sizing: border-box;
+}
+
+.contato-formulario h3 {
+    font-size: 28px;
+
+    margin-top: 0;
+
+    margin-bottom: 30px;
+}
+
+.contato-formulario form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+.campo {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.campo label {
+    font-size: 16px;
+
+    font-weight: bold;
+}
+
+
+.campo input,
+.campo textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px;
+
+    border-radius: 8px;
+
+    border: 1px solid #754689;
+
+    background: #160d19;
+
+    color: white;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+.campo textarea {
+    min-height: 130px;
+
+    resize: vertical;
+}
+
+
+.campo input:focus,
+.campo textarea:focus {
+    border-color: #c58add;
+
+    box-shadow: 0 0 10px rgba(197, 138, 221, 0.3);
+}
+
+/*botao*/
+.contato-formulario button {
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #754689;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.contato-formulario button:hover {
+    background: #ab75c1;
+
+    transform: translateY(-3px);
+}
+
+.contato-informacoes {
+    background: linear-gradient(
+        135deg,
+        #754689,
+        #4d285b
+    );
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    box-sizing: border-box;
+}
+
+.contato-informacoes h3 {
+    font-size: 32px;
+
+    margin-top: 0;
+
+    margin-bottom: 15px;
+}
+
+
+.contato-informacoes > p {
+    color: #eee;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    margin-bottom: 35px;
+}
+
+.contato-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    background-color: rgba(45, 24, 54, 0.65);
+
+    padding: 25px 30px;
+    margin-bottom: 20px;
+
+    border-radius: 15px;
+
+    text-decoration: none;
+    color: #fff;
+
+    transition: 0.3s;
+}
+
+.contato-item:hover {
+    transform: translateY(-5px);
+
+    background-color: rgba(45, 24, 54, 0.9);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.contato-item span {
+    font-size: 30px;
+}
+.contato-item h4 {
+    margin: 0 0 5px;
+
+    font-size: 18px;
+}
+
+.icone {
+    font-size: 35px;
+    width: 45px;
+    text-align: center;
+}
+
+.contato-item h3 {
+    margin: 0 0 5px;
+    font-size: 23px;
+}
+
+.contato-item p {
+    margin: 0;
+    font-size: 18px;
+}
+
+
+
+
+.aviso-formulario {
+    font-size: 14px;
+    color: #ddd;
+
+    background-color: rgba(0, 0, 0, 0.15);
+
+    padding: 10px 15px;
+    border-radius: 8px;
+
+    margin-top: 20px;
+}
+
+/*para mobile*/
+
+@media (max-width: 768px) {
+
+    .contato-conteudo {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+
+/* =====================================================
+   RESPONSIVIDADE - TABLET
+   ===================================================== */
+
+@media (max-width: 1024px) {
+
+    /* ---------- HEADER ---------- */
+
+    #header-fixo {
+        height: 70px;
+        padding: 0 40px;
+    }
+
+    .header {
+        font-size: 26px;
+    }
+
+    .menu {
+        padding-left: 0;
+        gap: 15px;
+    }
+
+    .menu a {
+        font-size: 17px;
+    }
+
+
+    /* ---------- INÍCIO ---------- */
+
+    .Portifolio {
+        font-size: clamp(80px, 15vw, 160px);
+    }
+
+    .nome {
+        left: 5%;
+        bottom: 6%;
+        font-size: 18px;
+    }
+
+    .descricao {
+        right: 5%;
+        bottom: 6%;
+        font-size: 18px;
+    }
+
+
+    /* ---------- SOBRE MIM ---------- */
+
+    #Sobre-Min {
+        padding: 80px 8%;
+    }
+
+    .Sobre-Conteiner {
+        gap: 40px;
+    }
+
+    .Sobre-texto {
+        width: 60%;
+    }
+
+    .Sobre-texto h2 {
+        font-size: 42px;
+    }
+
+    .Sobre-texto p {
+        font-size: 18px;
+    }
+
+    .Sobre-img {
+        width: 300px;
+        height: 300px;
+    }
+
+
+    /* ---------- ESTUDOS ---------- */
+
+    #Estudos {
+        padding: 80px 8%;
+    }
+
+    .estudos-colunas {
+        gap: 40px;
+    }
+
+    .estudos-conteiner h2 {
+        font-size: 42px;
+    }
+
+    .estudos h3 {
+        font-size: 20px;
+    }
+
+
+    /* ---------- IDIOMAS ---------- */
+
+    #Idioma {
+        padding: 80px 8%;
+    }
+
+    #Idioma h2 {
+        font-size: 42px;
+    }
+
+    .Idioma-conteiner {
+        gap: 20px;
+    }
+
+    .Idioma-item {
+        width: 210px;
+        padding: 30px;
+    }
+
+
+    /* ---------- CONTATO ---------- */
+
+    #Contato {
+        padding: 100px 8%;
+    }
+
+    .contato-titulo h2 {
+        font-size: 42px;
+    }
+
+    .contato-conteudo {
+        gap: 30px;
+    }
+
+    .contato-formulario,
+    .contato-informacoes {
+        padding: 30px;
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE - CELULAR
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+    /* ---------- HEADER ---------- */
+
+    #header-fixo {
+        height: auto;
+        min-height: 70px;
+
+        padding: 15px 20px;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .header {
+        font-size: 24px;
+    }
+
+    .header nav {
+        width: 100%;
+    }
+
+    .menu {
+        padding-left: 0;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        flex-wrap: wrap;
+
+        gap: 12px;
+    }
+
+    .menu a {
+        font-size: 15px;
+    }
+
+
+    /* ---------- INÍCIO ---------- */
+
+    #Inicio {
+        min-height: 100vh;
+    }
+
+    .Portifolio {
+        font-size: clamp(55px, 17vw, 110px);
+
+        transform:
+            translate(-50%, -50%)
+            scaleY(1.6)
+            scaleX(0.9);
+    }
+
+    .nome {
+        left: 20px;
+        bottom: 30px;
+
+        font-size: 16px;
+    }
+
+    .descricao {
+        right: 20px;
+        bottom: 30px;
+
+        font-size: 16px;
+
+        text-align: right;
+    }
+
+
+    /* ---------- SOBRE MIM ---------- */
+
+    #Sobre-Min {
+        padding: 80px 25px;
+    }
+
+    .Sobre-Conteiner {
+        flex-direction: column;
+
+        gap: 50px;
+
+        text-align: center;
+    }
+
+    .Sobre-texto {
+        width: 100%;
+    }
+
+    .Sobre-texto h2 {
+        font-size: 38px;
+    }
+
+    .Sobre-texto p {
+        font-size: 17px;
+
+        line-height: 1.6;
+    }
+
+    .Sobre-img {
+        width: 280px;
+        height: 280px;
+    }
+
+    .Sobre-img img {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    /* ---------- ESTUDOS ---------- */
+
+    #Estudos {
+        padding: 80px 25px;
+    }
+
+    .estudos-conteiner h2 {
+        font-size: 38px;
+
+        margin-bottom: 45px;
+    }
+
+    /* uma coluna no celular */
+
+    .estudos-colunas {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .estudos {
+        margin-bottom: 30px;
+    }
+
+    .estudos h3 {
+        font-size: 19px;
+    }
+
+    .barra {
+        height: 11px;
+    }
+
+    .btn {
+        display: block;
+
+        width: fit-content;
+
+        margin: 35px auto 0;
+
+        font-size: 17px;
+
+        padding: 15px 20px;
+    }
+
+
+    /* ---------- IDIOMAS ---------- */
+
+    #Idioma {
+        padding: 80px 25px;
+    }
+
+    #Idioma h2 {
+        font-size: 38px;
+
+        margin-bottom: 40px;
+    }
+
+    .Idioma-conteiner {
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        justify-items: center;
+    }
+
+    .Idioma-item {
+        width: 100%;
+
+        max-width: 350px;
+
+        min-height: 140px;
+
+        padding: 30px;
+    }
+
+    .Idioma-nam h3 {
+        font-size: 23px;
+    }
+
+
+    /* ---------- CONTATO ---------- */
+
+    #Contato {
+        padding: 80px 25px;
+    }
+
+    .contato-titulo {
+        margin-bottom: 40px;
+    }
+
+    .contato-titulo h2 {
+        font-size: 38px;
+    }
+
+    .contato-titulo p {
+        font-size: 16px;
+
+        line-height: 1.5;
+    }
+
+    /* formulário em cima
+       contatos embaixo */
+
+    .contato-conteudo {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .contato-formulario,
+    .contato-informacoes {
+        padding: 25px;
+    }
+
+    .contato-formulario h3 {
+        font-size: 25px;
+    }
+
+    .contato-informacoes h3 {
+        font-size: 28px;
+    }
+
+    .contato-item {
+        gap: 18px;
+
+        padding: 20px;
+    }
+
+    .contato-item h3 {
+        font-size: 20px;
+    }
+
+    .contato-item p {
+        font-size: 15px;
+
+        overflow-wrap: anywhere;
+    }
+
+}
+
+
+/* =====================================================
+   CELULARES PEQUENOS
+   ===================================================== */
+
+@media (max-width: 480px) {
+
+    /* ---------- HEADER ---------- */
+
+    #header-fixo {
+        padding: 12px 15px;
+    }
+
+    .header {
+        font-size: 21px;
+    }
+
+    .menu {
+        gap: 8px;
+    }
+
+    .menu a {
+        font-size: 13px;
+    }
+
+
+    /* ---------- INÍCIO ---------- */
+
+    .Portifolio {
+        font-size: 18vw;
+    }
+
+    .nome,
+    .descricao {
+        font-size: 14px;
+        bottom: 25px;
+    }
+
+    .nome {
+        left: 15px;
+    }
+
+    .descricao {
+        right: 15px;
+    }
+
+
+    /* ---------- SOBRE MIM ---------- */
+
+    #Sobre-Min {
+        padding: 70px 20px;
+    }
+
+    .Sobre-texto h2 {
+        font-size: 32px;
+    }
+
+    .Sobre-texto p {
+        font-size: 16px;
+    }
+
+    .Sobre-img {
+        width: 230px;
+        height: 230px;
+    }
+
+
+    /* ---------- ESTUDOS ---------- */
+
+    #Estudos {
+        padding: 70px 20px;
+    }
+
+    .estudos-conteiner h2 {
+        font-size: 32px;
+    }
+
+    .estudos h3 {
+        font-size: 17px;
+    }
+
+
+    /* ---------- IDIOMAS ---------- */
+
+    #Idioma {
+        padding: 70px 20px;
+    }
+
+    #Idioma h2 {
+        font-size: 32px;
+    }
+
+    .Idioma-item {
+        max-width: 100%;
+    }
+
+
+    /* ---------- CONTATO ---------- */
+
+    #Contato {
+        padding: 70px 20px;
+    }
+
+    .contato-titulo h2 {
+        font-size: 32px;
+    }
+
+    .contato-formulario,
+    .contato-informacoes {
+        padding: 20px;
+    }
+
+    .contato-item {
+        padding: 17px;
+    }
+
+    .icone {
+        font-size: 28px;
+        width: 35px;
+    }
+
+    .contato-item h3 {
+        font-size: 18px;
+    }
+
+    .contato-item p {
+        font-size: 13px;
+    }
+
+}
