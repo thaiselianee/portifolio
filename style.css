@@ -903,21 +903,34 @@
 
     /* ---------- INÍCIO ---------- */
 
-    .Portifolio {
-        font-size: clamp(80px, 15vw, 160px);
+    .inicio {
+        padding: 90px 6%;
     }
 
-    .nome {
-        left: 5%;
-        bottom: 6%;
-        font-size: 18px;
+    .titulo-inicio {
+        font-size: clamp(55px, 9vw, 95px);
+        letter-spacing: -4px;
     }
 
     .descricao {
-        right: 5%;
-        bottom: 6%;
-        font-size: 18px;
+        max-width: 500px;
     }
+
+    .botoes-inicio {
+        gap: 30px;
+    }
+
+    .chamada {
+        right: 6%;
+        width: 35%;
+    }
+
+    .chamada p {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+
 
 
     /* ---------- SOBRE MIM ---------- */
@@ -1057,33 +1070,148 @@
 
     /* ---------- INÍCIO ---------- */
 
-    #Inicio {
+    .inicio {
         min-height: 100vh;
+
+        padding: 70px 25px;
+
+        display: flex;
+        align-items: center;
     }
 
-    .Portifolio {
-        font-size: clamp(55px, 17vw, 110px);
 
-        transform:
-            translate(-50%, -50%)
-            scaleY(1.6)
-            scaleX(0.9);
+    .conteudo-inicio {
+        width: 100%;
     }
 
-    .nome {
-        left: 20px;
-        bottom: 30px;
 
-        font-size: 16px;
+    /* Bem-vindo */
+
+    .bem-vindo {
+        font-size: 20px;
     }
+
+    .linha-roxa {
+        width: 70px;
+
+        margin-bottom: 40px;
+    }
+
+
+    /* Introdução */
+
+    .introducao {
+        font-size: 11px;
+
+        letter-spacing: 4px;
+
+        margin-bottom: 12px;
+    }
+
+     /* Título */
+
+    .titulo-inicio {
+
+        width: 100%;
+
+        font-size: clamp(45px, 13vw, 75px);
+
+        line-height: 0.95;
+
+        letter-spacing: -3px;
+
+        white-space: normal;
+
+        word-break: normal;
+    }
+
+     /* Descrição */
 
     .descricao {
-        right: 20px;
-        bottom: 30px;
+
+        margin-top: 30px;
+
+        max-width: 100%;
 
         font-size: 16px;
 
-        text-align: right;
+        line-height: 1.5;
+    }
+
+     /* Botões */
+
+    .botoes-inicio {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 25px;
+
+        margin-top: 30px;
+    }
+
+
+    .botao-projetos {
+
+        min-width: 0;
+
+        width: auto;
+
+        padding: 15px 22px;
+
+        font-size: 11px;
+    }
+
+    .botao-projetos span {
+
+        margin-left: 20px;
+
+        font-size: 18px;
+    }
+
+
+    .botao-sobre {
+
+        font-size: 11px;
+    }
+
+
+    /* Chamada */
+
+    .chamada {
+
+        display: none;
+    }
+
+     /* Brilhos */
+
+    .inicio::before {
+
+        width: 400px;
+        height: 400px;
+
+        right: -250px;
+        top: -200px;
+
+        filter: blur(130px);
+
+        opacity: 0.30;
+    }
+
+    .inicio::after {
+
+        width: 350px;
+        height: 350px;
+
+        left: -230px;
+        bottom: -220px;
+
+        filter: blur(120px);
+
+        opacity: 0.25;
     }
 
 
