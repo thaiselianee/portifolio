@@ -10,121 +10,245 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
-<!--fim do head-->
+
 
 <body>
     <main>
-        <!--PEGA TODA A PAGINA-->
-        <section id="Inicio" class="inicio"> <!--<div id="Titulo" class="content"> </div>-->  
-           
-            <div class="conteudo-inicio">
-                <p class="bem-vindo">Bem-Vindo</p>
-                <div class="linha-roxa"></div>
-                <p class="Introducao">OLÀ, SOU EU</p>
+      <!-- INÍCIO -->
+    <section id="Inicio" class="inicio">
+
+        <div class="conteudo-inicio">
+
+            <p class="bem-vindo">Bem-Vindo</p>
+            <div class="linha-roxa"></div>
+
+            <!-- Apresentação -->
+                <div class="apresentacao-inicio">
+
+                <span class="texto-digitacao"></span>
+
                 <h1 class="titulo-inicio">
-                    Desenvolvedora
-
+                    <span class="nome-digitacao"></span>
                 </h1>
-            <p class="descricao">
-                Crie experiência digitais modernas, 
-                funcionais e com proposito.
-            </p>
-            
-             <!-- Botões -->
-        <div class="botoes-inicio">
-
-            <a href="https://github.com/thaiselianee?tab=repositories" class="botao-projetos">
-                VER MEUS PROJETOS
-                <span>→</span>
-            </a>
-
-            <a href="#Sobre-Min" class="botao-sobre">
-                SAIBA MAIS SOBRE MIM
-                <span>→</span>
-            </a>
 
             </div>
-         </div>
 
-        <!-- Chamada inferior -->
-    <div class="chamada">
+            </div>
 
-        <div class="linha-chamada"></div>
+            <p class="cargo-inicio">
+                DESENVOLVEDORA WEB
+            </p>
 
-        <p>VAMOS CONSTRUIR ALGO INCRÍVEL?</p>
+            <p class="descricao">
+                Crie experiências digitais modernas,
+                funcionais e com propósito.
+            </p>
 
-        <span>Transforme sua ideia em realidade.</span>
+            <!-- Áreas de destaque -->
+            <div class="destaques-inicio">
 
-    </div>
-
-        </section>
-
-        <!--Topo Fixo-->
-        <header id ="header-fixo">
-            <h2 class="header">Thais Eliane</h2>
-            <nav> 
-                <ul class="menu">
-                    <li><a href="#Inicio">Home</a></li>
-                    <li><a href="#Sobre-Min">Sobre Min</a></li>
-
-                    <li><a href="#Estudos"> Estudos/Habilidades</a></li>
-                    <li><a href="#Contato">Contato</a></li>
-
-
-                </ul>
-            </nav>
-        </header>
-
-        <!--Sobre min-->
-
-        <section id="Sobre-Min">
-            <div class="Sobre-Conteiner">
-                <div class="Sobre-texto">
-                <h2>Sobre Min</h2>
-
-                <p>Olá! Meu nome é Thais Eliane e atualmente sou
-                estudante de Análise e Desenvolvimento de Sistemas
-                (ADS) pelo Instituto Senac Santo Amaro.
-
-            Meu interesse pela área de tecnologia começou durante 
-            minha formação técnica em Informática, quando tive meus 
-            primeiros contatos com programação e desenvolvimento web. 
-            Posteriormente, cursei Ciência da Computação por aproximadamente 
-            um ano, período em que participei de projetos acadêmicos e 
-            desenvolvi conhecimentos em programação, algoritmos, números 
-            binários e outros fundamentos da computação.
-
-            Ao longo dessa experiência, conheci diferentes áreas 
-            da tecnologia e percebi que meus principais interesses 
-            estão voltados para o Desenvolvimento Web e a Análise de Dados. 
-            Por isso, decidi transferir minha graduação para ADS, buscando uma 
-            formação mais alinhada aos meus objetivos profissionais.
-
-            Atualmente, busco aprimorar minhas habilidades em programação, 
-            desenvolvimento Front-End e Back-End, banco de dados e análise de dados. 
-            Também possuo experiência com mídias sociais, incluindo administração e 
-            gerenciamento de redes sociais e produção de roteiros para conteúdos 
-            digitais.
-
-            Além disso, tenho interesse em Inteligência Artificial 
-            Cibersegurança, áreas que pretendo explorar e 
-            aprofundar ao longo da minha trajetória. Busco 
-            constantemente novas oportunidades para aprender, 
-            desenvolver minhas habilidades e adquirir experiências 
-            que contribuam para meu crescimento profissional na área 
-            de tecnologia.
-
-                            
-                </p>
+                <div class="destaque-item">
+                    <span class="destaque-icone">&lt;/&gt;</span>
+                    <span>FULL STACK</span>
                 </div>
 
-            <div class="Sobre-img">
-                <img src="img/euimg.jpeg" alt="minha foto">
+                <div class="destaque-item">
+                    <span class="destaque-icone">⚙</span>
+                    <span>AUTOMAÇÃO</span>
+                </div>
+
+                <div class="destaque-item">
+                    <span class="destaque-icone">◈</span>
+                    <span>ANÁLISE DE SEGURANÇA</span>
+                </div>
+
             </div>
 
-         </div>
+            <!-- Botões -->
+            <div class="botoes-inicio">
+
+                <a href="https://github.com/thaiselianee?tab=repositories"
+                class="botao-projetos">
+                    VER MEUS PROJETOS
+                    <span>→</span>
+                </a>
+
+                <a href="#Sobre-Min" class="botao-sobre">
+                    SAIBA MAIS SOBRE MIM
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Chamada inferior -->
+        <div class="chamada">
+
+            <div class="linha-chamada"></div>
+
+            <p>VAMOS CONSTRUIR ALGO INCRÍVEL?</p>
+
+            <span>Transforme sua ideia em realidade.</span>
+
+        </div>
+
+    </section>
+
+      <!-- Topo Fixo -->
+
+    <header id="header-fixo">
+
+        <nav>
+
+            <ul class="menu">
+
+                <li>
+                    <a href="#Inicio" data-i18n="home">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#Sobre-Min" data-i18n="about">
+                        Sobre Mim
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#Estudos" data-i18n="skills">
+                        Estudos/Habilidades
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#Projetos" data-i18n="projects">
+                        Meus Projetos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#Contato" data-i18n="contact">
+                        Contato
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <!-- =================================================
+            CONTROLES DO HEADER
+        ================================================== -->
+
+        <div class="controles-header">
+
+            <!-- Idiomas -->
+
+            <div class="idiomas">
+
+                <button
+                    class="idioma ativo"
+                    data-lang="pt"
+                    type="button"
+                >
+                    PT
+                </button>
+
+                <button
+                    class="idioma"
+                    data-lang="en"
+                    type="button"
+                >
+                    EN
+                </button>
+
+                <button
+                    class="idioma"
+                    data-lang="es"
+                    type="button"
+                >
+                    ES
+                </button>
+
+            </div>
+
+
+            <!-- Tema claro / escuro -->
+
+            <button
+                class="botao-tema"
+                id="botao-tema"
+                type="button"
+                aria-label="Alternar tema"
+            >
+                ☾
+            </button>
+
+        </div>
+
+    </header>
+
+        <!-- =====================================================
+            SOBRE MIM
+        ===================================================== -->
+
+        <section id="Sobre-Min">
+
+            <div class="Sobre-Conteiner">
+
+                <div class="Sobre-texto">
+
+                    <h2 data-i18n="aboutTitle">Sobre Mim</h2>
+
+                    <p id="texto-sobre" data-i18n="aboutText">
+                        Olá! Meu nome é Thais Eliane e atualmente sou estudante
+                        de Análise e Desenvolvimento de Sistemas (ADS) pelo
+                        Instituto Senac Santo Amaro.
+
+                        Meu interesse pela área de tecnologia começou durante
+                        minha formação técnica em Informática, quando tive meus
+                        primeiros contatos com programação e desenvolvimento web.
+
+                        Posteriormente, cursei Ciência da Computação por aproximadamente
+                        um ano, período em que participei de projetos acadêmicos e
+                        desenvolvi conhecimentos em programação, algoritmos, números
+                        binários e outros fundamentos da computação.
+
+                        Ao longo dessa experiência, conheci diferentes áreas
+                        da tecnologia e percebi que meus principais interesses
+                        estão voltados para o Desenvolvimento Web e a Análise de Dados.
+
+                        Por isso, decidi transferir minha graduação para ADS, buscando uma
+                        formação mais alinhada aos meus objetivos profissionais.
+
+                        Atualmente, busco aprimorar minhas habilidades em programação,
+                        desenvolvimento Front-End e Back-End, banco de dados e análise de dados.
+
+                        Também possuo experiência com mídias sociais, incluindo administração
+                        e gerenciamento de redes sociais e produção de roteiros para conteúdos
+                        digitais.
+
+                        Além disso, tenho interesse em Inteligência Artificial e
+                        Cibersegurança, áreas que pretendo explorar e aprofundar ao longo
+                        da minha trajetória.
+
+                        Busco constantemente novas oportunidades para aprender,
+                        desenvolver minhas habilidades e adquirir experiências que
+                        contribuam para meu crescimento profissional na área de tecnologia.
+                    </p>
+
+                </div>
+
+                <div class="Sobre-img">
+                    <img src="img/euu55.png" alt="Foto de Thais Eliane">
+                </div>
+
+            </div>
 
         </section>
+
 
 
         <!-- Minhas Habilidades-->
@@ -132,7 +256,7 @@
 
             <div class="estudos-conteiner">
 
-                <h2> Estudos/Habilidades</h2>
+                <h2> ESTUDOS/HABILIDADES</h2>
 
                 <div class="estudos-colunas">
 
@@ -266,46 +390,275 @@
         </section>
 
 
-        <!--Idiomas-->
+     <!-- =====================================================
+     PROJETOS
+===================================================== -->
 
-        <section id="Idioma">
-            <h2>Linguas</h2>
+<section id="Projetos" class="projetos-section">
 
-            <div class="Idioma-conteiner">
-                <div class="Idioma-item">
-                    <div class="Idioma-nam">
-                        <h3>Português</h3>
-                    </div>
-                    <div class="Idioma-sub">
-                        <p>Nativo</p>
-                    </div>
-                </div>
+    <div class="projetos-container">
 
+        <div class="projetos-titulo">
+            <div class="projetos-linha"></div>
 
-                
-                 <div class="Idioma-item">
-                    <div class="Idioma-nam">
-                        <h3>Espanhol</h3>
-                    </div>
-                    <div class="Idioma-sub">
-                        <p>Fluente</p>
-                    </div>
-                </div>
-
-
-                
-                 <div class="Idioma-item">
-                    <div class="Idioma-nam">
-                        <h3>Inglês</h3>
-                    </div>
-                    <div class="Idioma-sub">
-                        <p>Basico</p>
-                    </div>
-                </div>
-
-
+            <div>
+                <h2>MEUS TRABALHOS/PROJETOS</h2>
             </div>
-        </section>
+        </div>
+
+
+        <div class="projetos-grid">
+
+
+            <!-- =================================================
+                 PROJETO 1 - SALVATORE
+            ================================================== -->
+
+            <a
+                href="https://thaiselianee.github.io/salvatore-system/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="projeto-card"
+            >
+
+                <div class="projeto-imagem">
+                    <img
+                        src="img/SAVATORE.png"
+                        alt="Projeto Salvatore"
+                    >
+
+                    <span class="projeto-categoria">WEB</span>
+
+                    <div class="projeto-overlay">
+                        <span>VER PROJETO →</span>
+                    </div>
+                </div>
+
+                <div class="projeto-conteudo">
+
+                    <span class="projeto-tipo">
+                        FRONT-END
+                    </span>
+
+                    <h3>Salvatore</h3>
+
+                    <p>
+                        Sistema web para restaurante, desenvolvido
+                        com interface de navegação, cardápio e
+                        diferentes áreas do site.
+                    </p>
+
+                    <span class="projeto-link">
+                        VISUALIZAR PROJETO
+                        <strong>→</strong>
+                    </span>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 PROJETO 2 - LP CLÁUDIA
+            ================================================== -->
+
+            <a
+                href="https://thaiselianee.github.io/LP-Claudia-NOVO/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="projeto-card"
+            >
+
+                <div class="projeto-imagem">
+                    <img
+                        src="img/LP.png"
+                        alt="Landing Page Cláudia"
+                    >
+
+                    <span class="projeto-categoria">LANDING PAGE</span>
+
+                    <div class="projeto-overlay">
+                        <span>VER PROJETO →</span>
+                    </div>
+                </div>
+
+                <div class="projeto-conteudo">
+
+                    <span class="projeto-tipo">
+                        WEB DESIGN
+                    </span>
+
+                    <h3>Landing Page Cláudia</h3>
+
+                    <p>
+                        Landing page desenvolvida para divulgação
+                        de um encontro online, com foco em conversão
+                        e experiência do usuário.
+                    </p>
+
+                    <span class="projeto-link">
+                        VISUALIZAR PROJETO
+                        <strong>→</strong>
+                    </span>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 PROJETO 3 - MENTORIA CLÁUDIA
+            ================================================== -->
+
+            <a
+                href="https://thaiselianee.github.io/Pagina-de-vendas---Claudia/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="projeto-card"
+            >
+
+                <div class="projeto-imagem">
+                    <img
+                        src="img/LP-VENDAS.png"
+                        alt="Página de vendas Mentoria Blindagem Emocional"
+                    >
+
+                    <span class="projeto-categoria">SALES PAGE</span>
+
+                    <div class="projeto-overlay">
+                        <span>VER PROJETO →</span>
+                    </div>
+                </div>
+
+                <div class="projeto-conteudo">
+
+                    <span class="projeto-tipo">
+                        DESENVOLVIMENTO WEB
+                    </span>
+
+                    <h3>Mentoria Blindagem Emocional</h3>
+
+                    <p>
+                        Página de vendas desenvolvida para apresentar
+                        uma mentoria online, com foco em apresentação,
+                        conversão e responsividade.
+                    </p>
+
+                    <span class="projeto-link">
+                        VISUALIZAR PROJETO
+                        <strong>→</strong>
+                    </span>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 PROJETO 4 - HARRY / HOGWARTS
+            ================================================== -->
+
+            <a
+                href="https://thaiselianee.github.io/Harry/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="projeto-card"
+            >
+
+                <div class="projeto-imagem">
+                    <img
+                        src="img/harry.png"
+                        alt="Projeto Wizarding World"
+                    >
+
+                    <span class="projeto-categoria">GAME</span>
+
+                    <div class="projeto-overlay">
+                        <span>VER PROJETO →</span>
+                    </div>
+                </div>
+
+                <div class="projeto-conteudo">
+
+                    <span class="projeto-tipo">
+                        HTML • CSS • JAVASCRIPT
+                    </span>
+
+                    <h3>Wizarding World</h3>
+
+                    <p>
+                        Experiência web interativa inspirada no universo
+                        de Hogwarts, desenvolvida como projeto de
+                        interface e interação.
+                    </p>
+
+                    <span class="projeto-link">
+                        ACESSAR PROJETO
+                        <strong>→</strong>
+                    </span>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 PROJETO 5 - SISTEMA AUTÔNOMO
+            ================================================== -->
+
+            <a
+                href="https://thaiselianee.github.io/Sistema-Autonomo/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="projeto-card"
+            >
+
+                <div class="projeto-imagem">
+                    <img
+                        src="img/autonomo.png"
+                        alt="Projeto Sistema Autônomo Predadores"
+                    >
+
+                    <span class="projeto-categoria">AUTOMAÇÃO</span>
+
+                    <div class="projeto-overlay">
+                        <span>VER PROJETO →</span>
+                    </div>
+                </div>
+
+                <div class="projeto-conteudo">
+
+                    <span class="projeto-tipo">
+                        C# • POO • ALGORITMOS
+                    </span>
+
+                    <h3>Sistema Autônomo Predadores</h3>
+
+                    <p>
+                        Projeto acadêmico baseado no jogo Draftosaurus,
+                        utilizando C#, programação orientada a objetos
+                        e algoritmos de decisão autônoma.
+                    </p>
+
+                    <span class="projeto-link">
+                        VISUALIZAR PROJETO
+                        <strong>→</strong>
+                    </span>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
 
         <!--Forma de Contato-->
         <section id="Contato">
@@ -313,7 +666,7 @@
     <div class="contato-container">
 
         <div class="contato-titulo">
-            <h2>Entre em contato</h2>
+            <h2>Contato</h2>
             <p>
                 Tem um projeto, oportunidade ou alguma ideia?
                 Vamos conversar!
@@ -323,57 +676,7 @@
 
         <div class="contato-conteudo">
 
-            <!-- FORMULÁRIO -->
-
-            <div class="contato-formulario">
-
-                <h3>Envie uma mensagem</h3>
-
-                <form>
-
-                    <div class="campo">
-                        <label for="nome">Nome</label>
-
-                        <input
-                            type="text"
-                            id="nome"
-                            placeholder="Seu nome"
-                        >
-                    </div>
-
-
-                    <div class="campo">
-                        <label for="email">E-mail</label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            placeholder="Seu e-mail"
-                        >
-                    </div>
-
-
-                    <div class="campo">
-                        <label for="mensagem">Mensagem</label>
-
-                        <textarea
-                            id="mensagem"
-                            placeholder="Digite sua mensagem"
-                        ></textarea>
-                    </div>
-
-                        <p class="aviso-formulario">
-                        ⚠ Este formulário é apenas demonstrativo e ainda não possui
-                        integração com Back-End.
-                    </p>
-
-                    <button type="submit">Enviar mensagem</button>
-
-    
-
-                </form>
-
-            </div>
+        
 
 
             <!-- CONTATOS -->
