@@ -1,913 +1,195 @@
-/* =====================================================
-   ANIMAÇÃO DAS SEÇÕES AO ROLAR
-===================================================== */
+const translations = {
+  pt: {
+    availability: "ABERTA A OPORTUNIDADES", navHome: "Início", navAbout: "Sobre", navJourney: "Trajetória", navProjects: "Projetos", navSkills: "Habilidades", navContact: "Contato",
+    heroEyebrow: "PORTFÓLIO • DESENVOLVIMENTO & DESIGN", heroGreeting: "OLÁ, EU SOU", heroRole: "DESENVOLVEDORA WEB EM FORMAÇÃO", heroDescription: "Transformo ideias em experiências digitais — unindo código, criatividade e olhar para quem está do outro lado da tela.", heroButton: "EXPLORAR PROJETOS", heroMore: "Conheça minha trajetória",
+    aboutEyebrow: "PESSOA CURIOSA. MENTE EM MOVIMENTO.", aboutTitle: "Entre o<br><em>código</em> e<br>as ideias.", aboutLead: "Sou estudante de Análise e Desenvolvimento de Sistemas e gosto de transformar problemas em soluções digitais claras, funcionais e bem pensadas.", aboutText: "Meu caminho na tecnologia começou com a formação técnica em Informática. Desde então, venho explorando desenvolvimento web, interfaces, banco de dados e automação. Hoje, busco evoluir tanto na construção do código quanto na experiência de quem utiliza o produto.", aboutText2: "Acredito que uma boa solução não precisa apenas funcionar: ela também precisa fazer sentido, ser acessível e criar uma experiência agradável.", factOne: "Desenvolvimento web", factTwo: "UI / UX", factThree: "Automação & IA",
+    journeyTitle: "Em constante<br><em>construção.</em>", journeyIntro: "Cada etapa trouxe uma nova perspectiva sobre tecnologia e sobre o tipo de profissional que quero me tornar.", journeyEducation: "FORMAÇÃO", journeyTechTitle: "Técnico em Informática", journeyTechText: "Primeiro contato com hardware, manutenção, banco de dados SQL e desenvolvimento de sistemas web.", journeyCollegeTitle: "Ciência da Computação", journeyCollegeText: "Experiência acadêmica com lógica, algoritmos, programação e fundamentos da computação.", journeyCurrent: "ATUALMENTE", journeyAdsTitle: "Análise e Desenvolvimento de Sistemas", journeyAdsText: "Formação atual, com foco em ampliar minha prática em desenvolvimento e construção de soluções.", journeyExperience: "EXPERIÊNCIA", journeyWorkText: "Atuação em projetos de desenvolvimento web, UI/UX e automações com n8n e APIs.",
+    projectsEyebrow: "SELEÇÃO DE TRABALHOS", projectsTitle: "Feito com<br><em>intenção.</em>", projectsIntro: "Uma seleção de projetos acadêmicos e experiências práticas. Cada um representa uma etapa do meu aprendizado.", projectSalvatoreText: "Sistema web desenvolvido em equipe para uma hamburgueria, com páginas de apresentação, cardápio, galeria e área de login.", projectLandingText: "Landing page criada para divulgar um encontro online, com foco na apresentação da proposta e na experiência de navegação.", projectAutonomoText: "Projeto acadêmico desenvolvido em C#, aplicando conceitos de programação orientada a objetos, lógica e algoritmos.", projectBrasiliaText: "Projeto de desenvolvimento web com foco na apresentação de serviços digitais, organização visual e experiência do usuário.", projectInProgress: "LINK A ADICIONAR", viewProject: "VER PROJETO",
+    skillsTitle: "Meu kit de<br><em>construção.</em>", skillsIntro: "Tecnologias que venho estudando e utilizando em projetos, organizadas pelas áreas em que se conectam.", skillWeb: "Desenvolvimento web", skillProgramming: "Programação", skillData: "Dados & ferramentas", skillExplore: "Experiências & exploração", skillsNote: "Conhecimento é processo: estudo, prática, erro, ajuste e evolução.",
+    contactEyebrow: "TODA BOA IDEIA COMEÇA COM UMA CONVERSA.", contactTitle: "O próximo<br>projeto pode<br><em>começar aqui.</em>", contactButton: "ENTRE EM CONTATO", contactText: "Estou aberta a oportunidades, trocas e projetos que me permitam aprender e construir coisas interessantes."
+  },
+  en: {
+    availability: "OPEN TO OPPORTUNITIES", navHome: "Home", navAbout: "About", navJourney: "Journey", navProjects: "Projects", navSkills: "Skills", navContact: "Contact",
+    heroEyebrow: "PORTFOLIO • DEVELOPMENT & DESIGN", heroGreeting: "HELLO, I'M", heroRole: "WEB DEVELOPER IN PROGRESS", heroDescription: "I turn ideas into digital experiences — combining code, creativity and a thoughtful view of the people behind the screen.", heroButton: "EXPLORE PROJECTS", heroMore: "Discover my journey",
+    aboutEyebrow: "CURIOUS PERSON. ALWAYS LEARNING.", aboutTitle: "Between<br><em>code</em> and<br>ideas.", aboutLead: "I'm a Systems Analysis and Development student who enjoys turning problems into clear, functional and thoughtful digital solutions.", aboutText: "My journey in technology began with technical training in IT. Since then, I've been exploring web development, interfaces, databases and automation. Today, I aim to grow both in writing code and in shaping the experience of the people using a product.", aboutText2: "I believe a good solution should do more than work: it should make sense, be accessible and create an enjoyable experience.", factOne: "Web development", factTwo: "UI / UX", factThree: "Automation & AI",
+    journeyTitle: "Always under<br><em>construction.</em>", journeyIntro: "Each step has brought a new perspective on technology and on the professional I want to become.", journeyEducation: "EDUCATION", journeyTechTitle: "IT Technical Training", journeyTechText: "First experience with hardware, maintenance, SQL databases and web system development.", journeyCollegeTitle: "Computer Science", journeyCollegeText: "Academic experience with logic, algorithms, programming and computer science fundamentals.", journeyCurrent: "CURRENTLY", journeyAdsTitle: "Systems Analysis and Development", journeyAdsText: "My current degree, focused on expanding my development practice and building solutions.", journeyExperience: "EXPERIENCE", journeyWorkText: "Working on web development, UI/UX projects and automations with n8n and APIs.",
+    projectsEyebrow: "SELECTED WORK", projectsTitle: "Made with<br><em>intention.</em>", projectsIntro: "A selection of academic projects and practical experiences. Each one represents a step in my learning journey.", projectSalvatoreText: "Team-built web system for a burger restaurant, featuring presentation pages, menu, gallery and login area.", projectLandingText: "Landing page created to promote an online event, focusing on clear presentation and browsing experience.", projectAutonomoText: "Academic project developed in C#, applying object-oriented programming, logic and algorithm concepts.", projectBrasiliaText: "Web development project focused on presenting digital services, visual organization and user experience.", projectInProgress: "LINK TO BE ADDED", viewProject: "VIEW PROJECT",
+    skillsTitle: "My building<br><em>toolkit.</em>", skillsIntro: "Technologies I've been studying and using in projects, organized by the areas they connect to.", skillWeb: "Web development", skillProgramming: "Programming", skillData: "Data & tools", skillExplore: "Experiments & exploration", skillsNote: "Knowledge is a process: study, practice, mistakes, iteration and growth.",
+    contactEyebrow: "EVERY GOOD IDEA STARTS WITH A CONVERSATION.", contactTitle: "The next<br>project could<br><em>start here.</em>", contactButton: "GET IN TOUCH", contactText: "I'm open to opportunities, conversations and projects that let me learn and build interesting things."
+  },
+  es: {
+    availability: "ABIERTA A OPORTUNIDADES", navHome: "Inicio", navAbout: "Sobre mí", navJourney: "Trayectoria", navProjects: "Proyectos", navSkills: "Habilidades", navContact: "Contacto",
+    heroEyebrow: "PORTAFOLIO • DESARROLLO & DISEÑO", heroGreeting: "HOLA, SOY", heroRole: "DESARROLLADORA WEB EN FORMACIÓN", heroDescription: "Transformo ideas en experiencias digitales, uniendo código, creatividad y una mirada atenta a quienes están al otro lado de la pantalla.", heroButton: "EXPLORAR PROYECTOS", heroMore: "Conoce mi trayectoria",
+    aboutEyebrow: "PERSONA CURIOSA. MENTE EN MOVIMIENTO.", aboutTitle: "Entre el<br><em>código</em> y<br>las ideas.", aboutLead: "Soy estudiante de Análisis y Desarrollo de Sistemas y me gusta transformar problemas en soluciones digitales claras, funcionales y bien pensadas.", aboutText: "Mi camino en la tecnología comenzó con una formación técnica en Informática. Desde entonces, exploro el desarrollo web, las interfaces, las bases de datos y la automatización. Hoy busco crecer tanto en la programación como en la experiencia de quienes utilizan un producto.", aboutText2: "Creo que una buena solución no solo debe funcionar: también debe tener sentido, ser accesible y crear una experiencia agradable.", factOne: "Desarrollo web", factTwo: "UI / UX", factThree: "Automatización e IA",
+    journeyTitle: "En constante<br><em>construcción.</em>", journeyIntro: "Cada etapa aportó una nueva perspectiva sobre la tecnología y sobre la profesional que quiero llegar a ser.", journeyEducation: "FORMACIÓN", journeyTechTitle: "Técnico en Informática", journeyTechText: "Primer contacto con hardware, mantenimiento, bases de datos SQL y desarrollo de sistemas web.", journeyCollegeTitle: "Ciencias de la Computación", journeyCollegeText: "Experiencia académica con lógica, algoritmos, programación y fundamentos de la informática.", journeyCurrent: "ACTUALMENTE", journeyAdsTitle: "Análisis y Desarrollo de Sistemas", journeyAdsText: "Formación actual, enfocada en ampliar mi práctica en desarrollo y creación de soluciones.", journeyExperience: "EXPERIENCIA", journeyWorkText: "Participación en proyectos de desarrollo web, UI/UX y automatizaciones con n8n y APIs.",
+    projectsEyebrow: "SELECCIÓN DE TRABAJOS", projectsTitle: "Hecho con<br><em>intención.</em>", projectsIntro: "Una selección de proyectos académicos y experiencias prácticas. Cada uno representa una etapa de mi aprendizaje.", projectSalvatoreText: "Sistema web desarrollado en equipo para una hamburguesería, con presentación, menú, galería y área de inicio de sesión.", projectLandingText: "Landing page creada para promocionar un encuentro online, con atención a la presentación y la experiencia de navegación.", projectAutonomoText: "Proyecto académico desarrollado en C#, aplicando conceptos de programación orientada a objetos, lógica y algoritmos.", projectBrasiliaText: "Proyecto de desarrollo web enfocado en la presentación de servicios digitales, organización visual y experiencia del usuario.", projectInProgress: "ENLACE POR AÑADIR", viewProject: "VER PROYECTO",
+    skillsTitle: "Mi kit de<br><em>construcción.</em>", skillsIntro: "Tecnologías que estudio y utilizo en proyectos, organizadas por las áreas a las que pertenecen.", skillWeb: "Desarrollo web", skillProgramming: "Programación", skillData: "Datos y herramientas", skillExplore: "Experiencias y exploración", skillsNote: "El conocimiento es un proceso: estudio, práctica, error, ajuste y evolución.",
+    contactEyebrow: "TODA BUENA IDEA COMIENZA CON UNA CONVERSACIÓN.", contactTitle: "El próximo<br>proyecto puede<br><em>empezar aquí.</em>", contactButton: "PONTE EN CONTACTO", contactText: "Estoy abierta a oportunidades, intercambios y proyectos que me permitan aprender y construir cosas interesantes."
+  }
+};
 
-document.addEventListener("DOMContentLoaded", () => {
+const languageOrder = ["pt", "en", "es"];
+let currentLanguage = localStorage.getItem("portfolioLanguage") || "pt";
+if (!translations[currentLanguage]) currentLanguage = "pt";
 
-    const elementosAnimacao = document.querySelectorAll(
-        "#Sobre-Min, #Estudos, #Projetos, #Contato, " +
-        ".Sobre-texto, .Sobre-img, " +
-        ".projeto-card, " +
-        ".contato-titulo, .contato-informacoes"
+function setLanguage(language) {
+  currentLanguage = language;
+  document.documentElement.lang = language === "pt" ? "pt-BR" : language;
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+    const key = element.dataset.i18n;
+    const value = translations[language][key];
+    if (value) element.innerHTML = value;
+  });
+  document.getElementById("languageCode").textContent = language.toUpperCase();
+  localStorage.setItem("portfolioLanguage", language);
+}
+
+document.getElementById("languageSwitch").addEventListener("click", () => {
+  const next = (languageOrder.indexOf(currentLanguage) + 1) % languageOrder.length;
+  setLanguage(languageOrder[next]);
+});
+setLanguage(currentLanguage);
+
+const menuToggle = document.getElementById("menuToggle");
+const sideNav = document.getElementById("sideNav");
+menuToggle.addEventListener("click", () => {
+  const open = sideNav.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(open));
+});
+document.querySelectorAll(".nav-link").forEach(link => {
+  link.addEventListener("click", () => {
+    sideNav.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+  });
+});
+
+const sections = document.querySelectorAll("main section[id]");
+const navLinks = document.querySelectorAll(".nav-link");
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(link => link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`));
+    }
+  });
+}, { rootMargin: "-35% 0px -50% 0px", threshold: 0 });
+sections.forEach(section => observer.observe(section));
+
+const progress = document.getElementById("scrollProgress");
+function updateProgress() {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  progress.style.width = `${scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0}%`;
+}
+window.addEventListener("scroll", updateProgress, { passive: true });
+updateProgress();
+
+
+// Aparição progressiva dos elementos e desenho da trajetória.
+const revealTargets = document.querySelectorAll('.about-heading, .about-content, .timeline-item, .project-card, .skill-group, .contact-main, .contact-side');
+const revealObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.16, rootMargin: '0px 0px -35px 0px' });
+revealTargets.forEach((element, index) => {
+  element.style.setProperty('--reveal-delay', `${(index % 4) * 90}ms`);
+  revealObserver.observe(element);
+});
+
+
+/* =========================================
+   TRAJETÓRIA — AVIÃO ACOMPANHANDO A ROLAGEM
+========================================= */
+
+const journeyTimeline = document.querySelector('#trajetoria .timeline');
+const journeySvg = document.querySelector('.journey-curve');
+const journeyPath = document.querySelector('.journey-curve-path');
+const journeyPlane = document.querySelector('.journey-plane');
+
+if (journeyTimeline && journeySvg && journeyPath && journeyPlane) {
+
+  const pathLength = journeyPath.getTotalLength();
+
+  journeyPath.style.strokeDasharray = pathLength;
+  journeyPath.style.strokeDashoffset = pathLength;
+
+  const reducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  );
+
+  let animationFrame = null;
+
+  function updateJourneyAnimation() {
+    if (reducedMotion.matches) {
+        journeyPath.style.strokeDashoffset = 0;
+        journeyPlane.style.opacity = 0;
+        return;
+    }
+
+    const rect = journeyTimeline.getBoundingClientRect();
+
+    // A animação começa assim que a trajetória entra na tela
+    const progress = Math.max(
+        0,
+        Math.min(
+            1,
+            (window.innerHeight - rect.top) /
+            (window.innerHeight + rect.height)
+        )
     );
 
-    const observerScroll = new IntersectionObserver(
-        function (entries) {
+    // Desenha a linha conforme a rolagem
+    journeyPath.style.strokeDashoffset =
+        pathLength * (1 - progress);
 
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add("mostrar");
-
-                    observerScroll.unobserve(entry.target);
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.15
-        }
+    // Posiciona o avião na ponta da linha
+    const currentPoint = journeyPath.getPointAtLength(
+        pathLength * progress
     );
 
-    elementosAnimacao.forEach(elemento => {
-        observerScroll.observe(elemento);
+    // Mantém a ponta do avião virada para baixo
+    journeyPlane.setAttribute(
+        'transform',
+        `translate(${currentPoint.x} ${currentPoint.y})`
+    );
+
+    // O avião aparece desde o início da seção
+    const isVisible =
+        rect.bottom > 0 && rect.top < window.innerHeight;
+
+    journeyPlane.style.opacity = isVisible ? 1 : 0;
+}
+
+  function requestJourneyUpdate() {
+    if (animationFrame !== null) return;
+
+    animationFrame = requestAnimationFrame(() => {
+      updateJourneyAnimation();
+      animationFrame = null;
     });
+  }
 
-});
+  window.addEventListener(
+    'scroll',
+    requestJourneyUpdate,
+    { passive: true }
+  );
 
+  window.addEventListener(
+    'resize',
+    requestJourneyUpdate
+  );
 
-/* =====================================================
-   ANIMAÇÃO DE DIGITAÇÃO - INÍCIO
-===================================================== */
+  reducedMotion.addEventListener(
+    'change',
+    requestJourneyUpdate
+  );
 
-document.addEventListener("DOMContentLoaded", () => {
+  updateJourneyAnimation();
+}
 
-    const textoIntro = document.querySelector(".texto-digitacao");
-    const nome = document.querySelector(".nome-digitacao");
 
-    if (!textoIntro || !nome) return;
-
-
-    const intro = "OLÁ, SOU";
-    const nomeCompleto = "THAIS ELIANE";
-
-
-    let velocidadeDigitacao = 90;
-    let velocidadeApagar = 55;
-
-    let pausaDepoisDeDigitar = 1800;
-    let pausaAntesDeRecomecar = 500;
-
-
-    /* ================================================
-       DIGITAR TEXTO
-    ================================================ */
-
-    function digitarTexto(texto, elemento, indice = 0, callback) {
-
-        if (indice < texto.length) {
-
-            elemento.textContent += texto.charAt(indice);
-
-            setTimeout(() => {
-
-                digitarTexto(
-                    texto,
-                    elemento,
-                    indice + 1,
-                    callback
-                );
-
-            }, velocidadeDigitacao);
-
-        } else {
-
-            callback();
-
-        }
-
-    }
-
-
-    /* ================================================
-       APAGAR TEXTO
-    ================================================ */
-
-    function apagarTexto(elemento, callback) {
-
-        const textoAtual = elemento.textContent;
-
-        if (textoAtual.length > 0) {
-
-            elemento.textContent =
-                textoAtual.substring(
-                    0,
-                    textoAtual.length - 1
-                );
-
-            setTimeout(() => {
-
-                apagarTexto(
-                    elemento,
-                    callback
-                );
-
-            }, velocidadeApagar);
-
-        } else {
-
-            callback();
-
-        }
-
-    }
-
-
-    /* ================================================
-       ANIMAÇÃO COMPLETA
-    ================================================ */
-
-    function iniciarAnimacao() {
-
-        textoIntro.textContent = "";
-        nome.textContent = "";
-
-
-        /* 1 — OLÁ, SOU */
-
-        digitarTexto(
-            intro,
-            textoIntro,
-            0,
-            () => {
-
-
-                /* 2 — THAIS ELIANE */
-
-                digitarTexto(
-                    nomeCompleto,
-                    nome,
-                    0,
-                    () => {
-
-
-                        /* 3 — PAUSA */
-
-                        setTimeout(() => {
-
-
-                            /* 4 — APAGA O NOME */
-
-                            apagarTexto(
-                                nome,
-                                () => {
-
-
-                                    /* 5 — APAGA OLÁ, SOU */
-
-                                    apagarTexto(
-                                        textoIntro,
-                                        () => {
-
-
-                                            /* 6 — COMEÇA NOVAMENTE */
-
-                                            setTimeout(
-                                                iniciarAnimacao,
-                                                pausaAntesDeRecomecar
-                                            );
-
-                                        }
-                                    );
-
-                                }
-                            );
-
-                        }, pausaDepoisDeDigitar);
-
-                    }
-                );
-
-            }
-        );
-
-    }
-
-
-    /* Começa a animação */
-
-    iniciarAnimacao();
-
-});
-
-
-/* =====================================================
-   IDIOMAS + TEMA
-===================================================== */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const botoesIdioma = document.querySelectorAll(".idioma");
-    const botaoTema = document.querySelector("#botao-tema");
-
-
-    /* =================================================
-       TRADUÇÕES
-    ================================================= */
-
-    const traducoes = {
-
-        /* =================================================
-           PORTUGUÊS
-        ================================================= */
-
-        pt: {
-
-            /* HEADER */
-
-            home: "Home",
-            about: "Sobre Mim",
-            skills: "Estudos/Habilidades",
-            projects: "Meus Projetos",
-            contact: "Contato",
-
-
-            /* SOBRE MIM */
-
-            aboutTitle: "Sobre Mim",
-
-            aboutText: `Olá! Meu nome é Thais Eliane e atualmente sou estudante de Análise e Desenvolvimento de Sistemas (ADS) pelo Instituto Senac Santo Amaro.
-
-Meu interesse pela área de tecnologia começou durante minha formação técnica em Informática, quando tive meus primeiros contatos com programação e desenvolvimento web.
-
-Posteriormente, cursei Ciência da Computação por aproximadamente um ano, período em que participei de projetos acadêmicos e desenvolvi conhecimentos em programação, algoritmos, números binários e outros fundamentos da computação.
-
-Ao longo dessa experiência, conheci diferentes áreas da tecnologia e percebi que meus principais interesses estão voltados para o Desenvolvimento Web e a Análise de Dados.
-
-Por isso, decidi transferir minha graduação para ADS, buscando uma formação mais alinhada aos meus objetivos profissionais.
-
-Atualmente, busco aprimorar minhas habilidades em programação, desenvolvimento Front-End e Back-End, banco de dados e análise de dados.
-
-Também possuo experiência com mídias sociais, incluindo administração e gerenciamento de redes sociais e produção de roteiros para conteúdos digitais.
-
-Além disso, tenho interesse em Inteligência Artificial e Cibersegurança, áreas que pretendo explorar e aprofundar ao longo da minha trajetória.
-
-Busco constantemente novas oportunidades para aprender, desenvolver minhas habilidades e adquirir experiências que contribuam para meu crescimento profissional na área de tecnologia.`,
-
-
-            /* ESTUDOS / HABILIDADES */
-
-            studiesTitle: "Estudos e Habilidades",
-            studiesSubtitle: "Conhecimentos e tecnologias que fazem parte da minha formação.",
-
-            curriculum: "Baixar Currículo",
-
-
-            /* PROJETOS */
-
-            projectsTitle: "Meus Projetos",
-
-            projectSalvatoreCategory: "WEB",
-            projectSalvatoreType: "FRONT-END",
-            projectSalvatoreTitle: "Salvatore",
-            projectSalvatoreText: "Sistema web desenvolvido para uma hamburgueria, com páginas de apresentação, cardápio, galeria e área de login.",
-
-            projectClaudiaCategory: "LANDING PAGE",
-            projectClaudiaType: "WEB DESIGN",
-            projectClaudiaTitle: "Landing Page Cláudia",
-            projectClaudiaText: "Landing page desenvolvida para divulgação de um encontro online, com foco em apresentação, conversão e experiência do usuário.",
-
-            projectClaudiaSalesCategory: "SALES PAGE",
-            projectClaudiaSalesType: "DESENVOLVIMENTO WEB",
-            projectClaudiaSalesTitle: "Mentoria Blindagem Emocional",
-            projectClaudiaSalesText: "Página de vendas desenvolvida para apresentar uma mentoria, destacando sua proposta, benefícios, método e chamada para ação.",
-
-            projectHarryCategory: "GAME",
-            projectHarryType: "HTML • CSS • JAVASCRIPT",
-            projectHarryTitle: "Wizarding World",
-            projectHarryText: "Experiência web interativa inspirada no universo de Harry Potter, desenvolvida com HTML, CSS e JavaScript.",
-
-            projectAutonomoCategory: "AUTOMAÇÃO",
-            projectAutonomoType: "C# • POO • ALGORITMOS",
-            projectAutonomoTitle: "Sistema Autônomo Predadores",
-            projectAutonomoText: "Projeto acadêmico desenvolvido em C# com conceitos de programação orientada a objetos e algoritmos.",
-
-            projectView: "VER PROJETO →",
-
-
-            /* CONTATO */
-
-            contactTitle: "Contato",
-
-            contactSubtitle: "Tem um projeto, oportunidade ou alguma ideia? Vamos conversar!",
-
-            contactTalk: "Vamos conversar?",
-
-            contactText: "Você também pode entrar em contato comigo através das minhas redes.",
-
-            email: "E-mail",
-            linkedin: "LinkedIn",
-            github: "GitHub",
-            instagram: "Instagram",
-
-            contactFooter: "Vamos construir algo incrível juntos! ♡"
-
-        },
-
-
-        /* =================================================
-           INGLÊS
-        ================================================= */
-
-        en: {
-
-            home: "Home",
-            about: "About Me",
-            skills: "Studies/Skills",
-            projects: "My Projects",
-            contact: "Contact",
-
-
-            aboutTitle: "About Me",
-
-            aboutText: `Hello! My name is Thais Eliane and I am currently studying Systems Analysis and Development (ADS) at Senac Santo Amaro Institute.
-
-My interest in technology began during my technical training in Information Technology, when I had my first contact with programming and web development.
-
-Later, I studied Computer Science for approximately one year, during which I participated in academic projects and developed knowledge in programming, algorithms, binary numbers, and other computing fundamentals.
-
-Throughout this experience, I explored different areas of technology and realized that my main interests are focused on Web Development and Data Analysis.
-
-For this reason, I decided to transfer my degree to Systems Analysis and Development, seeking an education more aligned with my professional goals.
-
-Currently, I am working to improve my skills in programming, Front-End and Back-End development, databases, and data analysis.
-
-I also have experience with social media, including social media management and the creation of scripts for digital content.
-
-In addition, I am interested in Artificial Intelligence and Cybersecurity, areas that I intend to explore and develop throughout my career.
-
-I am constantly looking for new opportunities to learn, develop my skills, and gain experiences that contribute to my professional growth in technology.`,
-
-
-            studiesTitle: "Studies and Skills",
-            studiesSubtitle: "Knowledge and technologies that are part of my professional development.",
-
-            curriculum: "Download Resume",
-
-
-            projectsTitle: "My Projects",
-
-            projectSalvatoreCategory: "WEB",
-            projectSalvatoreType: "FRONT-END",
-            projectSalvatoreTitle: "Salvatore",
-            projectSalvatoreText: "Web system developed for a burger restaurant, featuring presentation pages, menu, gallery and login area.",
-
-            projectClaudiaCategory: "LANDING PAGE",
-            projectClaudiaType: "WEB DESIGN",
-            projectClaudiaTitle: "Cláudia Landing Page",
-            projectClaudiaText: "Landing page developed to promote an online event, focusing on presentation, conversion and user experience.",
-
-            projectClaudiaSalesCategory: "SALES PAGE",
-            projectClaudiaSalesType: "WEB DEVELOPMENT",
-            projectClaudiaSalesTitle: "Emotional Shielding Mentorship",
-            projectClaudiaSalesText: "Sales page developed to present a mentorship, highlighting its proposal, benefits, method and call to action.",
-
-            projectHarryCategory: "GAME",
-            projectHarryType: "HTML • CSS • JAVASCRIPT",
-            projectHarryTitle: "Wizarding World",
-            projectHarryText: "Interactive web experience inspired by the Harry Potter universe, developed with HTML, CSS and JavaScript.",
-
-            projectAutonomoCategory: "AUTOMATION",
-            projectAutonomoType: "C# • OOP • ALGORITHMS",
-            projectAutonomoTitle: "Autonomous Predators System",
-            projectAutonomoText: "Academic project developed in C# using object-oriented programming concepts and algorithms.",
-
-            projectView: "VIEW PROJECT →",
-
-
-            contactTitle: "Contact",
-
-            contactSubtitle: "Have a project, opportunity or idea? Let's talk!",
-
-            contactTalk: "Let's talk?",
-
-            contactText: "You can also get in touch with me through my social networks.",
-
-            email: "E-mail",
-            linkedin: "LinkedIn",
-            github: "GitHub",
-            instagram: "Instagram",
-
-            contactFooter: "Let's build something amazing together! ♡"
-
-        },
-
-
-        /* =================================================
-           ESPANHOL
-        ================================================= */
-
-        es: {
-
-            home: "Inicio",
-            about: "Sobre Mí",
-            skills: "Estudios/Habilidades",
-            projects: "Mis Proyectos",
-            contact: "Contacto",
-
-
-            aboutTitle: "Sobre Mí",
-
-            aboutText: `¡Hola! Mi nombre es Thais Eliane y actualmente estudio Análisis y Desarrollo de Sistemas (ADS) en el Instituto Senac Santo Amaro.
-
-Mi interés por la tecnología comenzó durante mi formación técnica en Informática, cuando tuve mis primeros contactos con la programación y el desarrollo web.
-
-Posteriormente, estudié Ciencias de la Computación durante aproximadamente un año, período en el que participé en proyectos académicos y desarrollé conocimientos en programación, algoritmos, números binarios y otros fundamentos de la informática.
-
-A lo largo de esta experiencia, conocí diferentes áreas de la tecnología y descubrí que mis principales intereses están enfocados en el Desarrollo Web y el Análisis de Datos.
-
-Por eso, decidí transferir mi carrera a Análisis y Desarrollo de Sistemas, buscando una formación más alineada con mis objetivos profesionales.
-
-Actualmente, busco mejorar mis habilidades en programación, desarrollo Front-End y Back-End, bases de datos y análisis de datos.
-
-También tengo experiencia con redes sociales, incluyendo la administración y gestión de redes sociales y la creación de guiones para contenidos digitales.
-
-Además, tengo interés en Inteligencia Artificial y Ciberseguridad, áreas que pretendo explorar y profundizar a lo largo de mi trayectoria.
-
-Busco constantemente nuevas oportunidades para aprender, desarrollar mis habilidades y adquirir experiencias que contribuyan a mi crecimiento profesional en el área de tecnología.`,
-
-
-            studiesTitle: "Estudios y Habilidades",
-            studiesSubtitle: "Conocimientos y tecnologías que forman parte de mi desarrollo profesional.",
-
-            curriculum: "Descargar Currículum",
-
-
-            projectsTitle: "Mis Proyectos",
-
-            projectSalvatoreCategory: "WEB",
-            projectSalvatoreType: "FRONT-END",
-            projectSalvatoreTitle: "Salvatore",
-            projectSalvatoreText: "Sistema web desarrollado para una hamburguesería, con páginas de presentación, menú, galería y área de inicio de sesión.",
-
-            projectClaudiaCategory: "LANDING PAGE",
-            projectClaudiaType: "DISEÑO WEB",
-            projectClaudiaTitle: "Landing Page Cláudia",
-            projectClaudiaText: "Landing page desarrollada para promocionar un evento online, enfocada en presentación, conversión y experiencia del usuario.",
-
-            projectClaudiaSalesCategory: "SALES PAGE",
-            projectClaudiaSalesType: "DESARROLLO WEB",
-            projectClaudiaSalesTitle: "Mentoría Blindaje Emocional",
-            projectClaudiaSalesText: "Página de ventas desarrollada para presentar una mentoría, destacando su propuesta, beneficios, método y llamada a la acción.",
-
-            projectHarryCategory: "GAME",
-            projectHarryType: "HTML • CSS • JAVASCRIPT",
-            projectHarryTitle: "Wizarding World",
-            projectHarryText: "Experiencia web interactiva inspirada en el universo de Harry Potter, desarrollada con HTML, CSS y JavaScript.",
-
-            projectAutonomoCategory: "AUTOMATIZACIÓN",
-            projectAutonomoType: "C# • POO • ALGORITMOS",
-            projectAutonomoTitle: "Sistema Autónomo de Depredadores",
-            projectAutonomoText: "Proyecto académico desarrollado en C# utilizando conceptos de programación orientada a objetos y algoritmos.",
-
-            projectView: "VER PROYECTO →",
-
-
-            contactTitle: "Contacto",
-
-            contactSubtitle: "¿Tienes un proyecto, una oportunidad o alguna idea? ¡Hablemos!",
-
-            contactTalk: "¿Hablamos?",
-
-            contactText: "También puedes ponerte en contacto conmigo a través de mis redes.",
-
-            email: "E-mail",
-            linkedin: "LinkedIn",
-            github: "GitHub",
-            instagram: "Instagram",
-
-            contactFooter: "¡Construyamos algo increíble juntos! ♡"
-
-        }
-
-    };
-
-
-    /* =================================================
-       APLICAR IDIOMA
-    ================================================= */
-
-    function aplicarIdioma(idioma) {
-
-        const textos = traducoes[idioma];
-
-        if (!textos) return;
-
-
-        /* Elementos com data-i18n */
-
-        document.querySelectorAll("[data-i18n]").forEach(elemento => {
-
-            const chave = elemento.dataset.i18n;
-
-            if (textos[chave]) {
-
-                if (
-                    elemento.tagName === "INPUT" ||
-                    elemento.tagName === "TEXTAREA"
-                ) {
-
-                    elemento.placeholder = textos[chave];
-
-                } else {
-
-                    elemento.textContent = textos[chave];
-
-                }
-
-            }
-
-        });
-
-
-        /* =================================================
-           ESTUDOS
-        ================================================= */
-
-        const tituloEstudos =
-            document.querySelector("#Estudos h2");
-
-        if (tituloEstudos && textos.studiesTitle) {
-            tituloEstudos.textContent = textos.studiesTitle;
-        }
-
-
-        /* =================================================
-           PROJETOS
-        ================================================= */
-
-        const tituloProjetos =
-            document.querySelector(
-                "#Projetos .projetos-titulo h2"
-            );
-
-        if (tituloProjetos && textos.projectsTitle) {
-            tituloProjetos.textContent = textos.projectsTitle;
-        }
-
-
-        const projetos =
-            document.querySelectorAll(".projeto-card");
-
-
-        projetos.forEach((card, index) => {
-
-            const mapaProjetos = [
-
-                {
-                    category: "projectSalvatoreCategory",
-                    type: "projectSalvatoreType",
-                    title: "projectSalvatoreTitle",
-                    text: "projectSalvatoreText"
-                },
-
-                {
-                    category: "projectClaudiaCategory",
-                    type: "projectClaudiaType",
-                    title: "projectClaudiaTitle",
-                    text: "projectClaudiaText"
-                },
-
-                {
-                    category: "projectClaudiaSalesCategory",
-                    type: "projectClaudiaSalesType",
-                    title: "projectClaudiaSalesTitle",
-                    text: "projectClaudiaSalesText"
-                },
-
-                {
-                    category: "projectHarryCategory",
-                    type: "projectHarryType",
-                    title: "projectHarryTitle",
-                    text: "projectHarryText"
-                },
-
-                {
-                    category: "projectAutonomoCategory",
-                    type: "projectAutonomoType",
-                    title: "projectAutonomoTitle",
-                    text: "projectAutonomoText"
-                }
-
-            ];
-
-
-            const projeto = mapaProjetos[index];
-
-            if (!projeto) return;
-
-
-            const categoria =
-                card.querySelector(".projeto-categoria");
-
-            const tipo =
-                card.querySelector(".projeto-tipo");
-
-            const titulo =
-                card.querySelector(".projeto-conteudo h3");
-
-            const descricao =
-                card.querySelector(".projeto-conteudo p");
-
-            const link =
-                card.querySelector(".projeto-link");
-
-
-            if (categoria) {
-                categoria.textContent =
-                    textos[projeto.category];
-            }
-
-            if (tipo) {
-                tipo.textContent =
-                    textos[projeto.type];
-            }
-
-            if (titulo) {
-                titulo.textContent =
-                    textos[projeto.title];
-            }
-
-            if (descricao) {
-                descricao.textContent =
-                    textos[projeto.text];
-            }
-
-            if (link) {
-
-                const textoLink =
-                    Array.from(link.childNodes)
-                        .find(node =>
-                            node.nodeType === Node.TEXT_NODE
-                        );
-
-                if (textoLink) {
-                    textoLink.textContent =
-                        textos.projectView + " ";
-                }
-
-            }
-
-        });
-
-
-        /* =================================================
-           CONTATO
-        ================================================= */
-
-        const contatoTitulo =
-            document.querySelector(
-                "#Contato .contato-titulo h2"
-            );
-
-        if (contatoTitulo) {
-            contatoTitulo.textContent =
-                textos.contactTitle;
-        }
-
-
-        const contatoSubtitulo =
-            document.querySelector(
-                "#Contato .contato-titulo p"
-            );
-
-        if (contatoSubtitulo) {
-            contatoSubtitulo.textContent =
-                textos.contactSubtitle;
-        }
-
-
-        const contatoConversar =
-            document.querySelector(
-                "#Contato .contato-informacoes h3"
-            );
-
-        if (contatoConversar) {
-            contatoConversar.textContent =
-                textos.contactTalk;
-        }
-
-
-        const contatoTexto =
-            document.querySelector(
-                "#Contato .contato-informacoes > p"
-            );
-
-        if (contatoTexto) {
-            contatoTexto.textContent =
-                textos.contactText;
-        }
-
-
-        /* Títulos dos contatos */
-
-        const contatoItens = {
-            "E-mail": "email",
-            "LinkedIn": "linkedin",
-            "GitHub": "github",
-            "Instagram": "instagram"
-        };
-
-
-        document.querySelectorAll(".contato-item").forEach(item => {
-
-            const titulo =
-                item.querySelector("h3, h4");
-
-            if (!titulo) return;
-
-
-            const textoOriginal =
-                titulo.textContent.trim();
-
-            const chave =
-                contatoItens[textoOriginal];
-
-
-            if (chave && textos[chave]) {
-                titulo.textContent =
-                    textos[chave];
-            }
-
-        });
-
-
-        /* =================================================
-           BOTÃO DE IDIOMA ATIVO
-        ================================================= */
-
-        botoesIdioma.forEach(botao => {
-
-            botao.classList.toggle(
-                "ativo",
-                botao.dataset.lang === idioma
-            );
-
-        });
-
-
-        /* =================================================
-           SALVAR IDIOMA
-        ================================================= */
-
-        localStorage.setItem(
-            "idiomaSelecionado",
-            idioma
-        );
-
-    }
-
-
-    /* =================================================
-       CLIQUE NOS IDIOMAS
-    ================================================= */
-
-    botoesIdioma.forEach(botao => {
-
-        botao.addEventListener("click", () => {
-
-            aplicarIdioma(
-                botao.dataset.lang
-            );
-
-        });
-
-    });
-
-
-    /* =================================================
-       TEMA CLARO / ESCURO
-       
-       IMPORTANTE:
-       O INÍCIO NÃO É ALTERADO.
-       O TEMA CLARO É APLICADO APENAS
-       ÀS SEÇÕES A PARTIR DE SOBRE MIM.
-    ================================================= */
-
-    function aplicarTema(tema) {
-
-        if (tema === "claro") {
-
-            document.body.classList.add("tema-claro");
-
-            /*
-             * Marca especificamente as áreas que
-             * devem responder ao tema.
-             */
-
-            document.body.classList.add(
-                "tema-claro-secoes"
-            );
-
-
-            if (botaoTema) {
-
-                botaoTema.textContent = "☀";
-
-                botaoTema.setAttribute(
-                    "aria-label",
-                    "Ativar tema escuro"
-                );
-
-            }
-
-        } else {
-
-            document.body.classList.remove(
-                "tema-claro"
-            );
-
-            document.body.classList.remove(
-                "tema-claro-secoes"
-            );
-
-
-            if (botaoTema) {
-
-                botaoTema.textContent = "☾";
-
-                botaoTema.setAttribute(
-                    "aria-label",
-                    "Ativar tema claro"
-                );
-
-            }
-
-        }
-
-
-        /* =================================================
-           SALVAR TEMA
-        ================================================= */
-
-        localStorage.setItem(
-            "temaSelecionado",
-            tema
-        );
-
-    }
-
-
-    /* =================================================
-       CLIQUE NO TEMA
-    ================================================= */
-
-    if (botaoTema) {
-
-        botaoTema.addEventListener("click", () => {
-
-            const temaAtual =
-                document.body.classList.contains(
-                    "tema-claro"
-                )
-                    ? "claro"
-                    : "escuro";
-
-
-            const novoTema =
-                temaAtual === "claro"
-                    ? "escuro"
-                    : "claro";
-
-
-            aplicarTema(novoTema);
-
-        });
-
-    }
-
-
-    /* =================================================
-       RECUPERAR CONFIGURAÇÕES
-    ================================================= */
-
-    const idiomaSalvo =
-        localStorage.getItem(
-            "idiomaSelecionado"
-        ) || "pt";
-
-
-    const temaSalvo =
-        localStorage.getItem(
-            "temaSelecionado"
-        ) || "escuro";
-
-
-    aplicarIdioma(idiomaSalvo);
-
-    aplicarTema(temaSalvo);
-
-});
+// O cartão de Brasília já tem o caminho da imagem preparado.
+// Quando o endereço estiver disponível, substitua # pelo link real no HTML.
